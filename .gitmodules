@@ -1,0 +1,6 @@
+[submodule "test-frontend"]
+	path = test-frontend
+	url = https://github.com/seapeng/test-frontend.git
+[submodule "test-backend"]
+	path = test-backend
+	url = https://github.com/seapeng/test-backend.git

@@ -1,0 +1,6 @@
+[submodule "backend"]
+	path = backend
+	url = https://github.com/seapeng/backend-assign.git
+[submodule "frontend"]
+	path = frontend
+	url = https://github.com/seapeng/frontend-assign.git

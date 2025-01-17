@@ -6,7 +6,9 @@ services:
       dockerfile: Dockerfile-frontend
     container_name: tfd-frontend
     ports:
-      - 3000:3000
+      - 4000:4000
+    networks:
+      - tfd-production
   nest:
     build:
       context: .
@@ -20,6 +22,8 @@ services:
       - ./backend/test:/app/test
       - ./backend/.env:/app/.env
       - ./backend/upload:/app/upload
+    networks:
+      - tfd-production
   nginx:
     build:
       context: .
@@ -34,6 +38,8 @@ services:
       - NGINX_MAX_BODY=100M
     ports:
       - 8080:8080
+    networks:
+      - tfd-production
   db:
     image: postgres:12
     container_name: tfd-nest-db
@@ -45,10 +51,19 @@ services:
       - 5432:5432
     volumes:
       - postgresdata:/var/lib/postgresql
+    networks:
+      - tfd-production
   redis:
     image: redis:5
     container_name: tfd-redis
     ports:
       - 6379:6379
+    networks:
+      - tfd-production
 volumes:
   postgresdata:
+
+networks:
+  tfd-production:
+    name: tfd-production
+    external: true

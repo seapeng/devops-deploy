@@ -6,7 +6,7 @@ services:
       dockerfile: Dockerfile-frontend
     container_name: tfd-frontend
     ports:
-      - 4000:4000
+      - 3000:3000
     networks:
       - tfd-production
   nest:

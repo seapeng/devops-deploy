@@ -21,10 +21,3 @@ jobs:
             ls
             cd /var/www/devops-deploy
             git pull
-            git submodule init
-            git submodule update
-            nvm install 16
-            nvm use 16
-            docker-compose down
-            docker-compose build
-            docker-compose up -d

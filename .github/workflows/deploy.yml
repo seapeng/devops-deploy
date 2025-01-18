@@ -20,4 +20,8 @@ jobs:
             pwd
             ls
             cd /var/www/devops-deploy
+            git pull
             git submodule update --init --recursive
+            docker-compose down
+            docker-compose build
+            docker-compose up -d

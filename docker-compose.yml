@@ -1,6 +1,6 @@
 # version: "2"
 services:
-  forntend:
+  frontend:
     build:
       context: .
       dockerfile: Dockerfile-frontend

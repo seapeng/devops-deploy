@@ -5,7 +5,7 @@ on:
   pull_request:
     branches: main
 jobs:
-  testing:
+  deploy-to-devops-assignment:
     runs-on: ubuntu-22.04
     steps:
       - name: executing remote ssh commands using password
